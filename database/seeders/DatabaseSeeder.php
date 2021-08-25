@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,12 +16,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-        $this->call(UsersTableSeeder::class);
-        $this->call(CategoriesTableSeeder::class);
-        $this->call(TagsTableSeeder::class);
-        $this->call(ProductsTableSeeder::class);
-        //duplicate product for data 
-        $this->call(ProductsTableSeeder::class);
+        User::factory()->create([
+            'name' => 'admin',
+            'email' => 'admin@admin.com',
+            'password' => Hash::make('password')
+        ]);
     }
 }

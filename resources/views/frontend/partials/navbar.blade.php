@@ -15,21 +15,22 @@
 					</div>
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav navbar-right cl-effect-14">
-							<li class="{{ Request::is('/') ? 'active' : '' }}">
+						<li class="{{ Request::path() ==  'home' ? 'active' : ''  }}">
                             <a href="{{ route('home') }}">Home</a>
                             </li>
-                            <li class="{{ Request::is('/about*') ? 'active' : '' }}">
-                            <a href="{{ route('about') }}">About</a>
+                            <li class="{{ Request::path() ==  'about' ? 'active' : ''  }}">
+                    		<a href="{{ route('about') }}"></i> About</a>
+                			</li>
+                            <li class="{{ Request::path() ==  'property' ? 'active' : ''  }}">
+                            <a href="{{ route('property') }}">Properties</a>
                             </li>
-                            <li class="{{ Request::is('/property*') ? 'active' : '' }}">
-                            <a href="{{ route('property') }}">Property</a>
-                            </li>
-                            <li class="{{ Request::is('/blog*') ? 'active' : '' }}">
+                            <li class="{{ Request::path() ==  'blog' ? 'active' : ''  }}">
                             <a href="{{ route('blog') }}">Blog</a>
                             </li>
-                            <li class="{{ Request::is('/contact') ? 'active' : '' }}">
+                            <li class="{{ Request::path() ==  'contact' ? 'active' : ''  }}">
                             <a href="{{ route('contact') }}">Contact</a>
                             </li>
+							
 						</ul>
 					</div>
 				</div>

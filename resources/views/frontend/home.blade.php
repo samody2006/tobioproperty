@@ -1,9 +1,3 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,14 +13,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href='//fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
 <!-- /fonts -->
 <!-- css files -->
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/progressbar.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="css/team.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="front/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+<link href="front/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+<link href="front/css/progressbar.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="front/css/team.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="front/css/style.css" rel="stylesheet" type="text/css" media="all"/>
 <!-- /css files -->
 <!-- js files -->
-<script src="js/modernizr.custom.js"></script>
+<script src="front/js/modernizr.custom.js"></script>
 <!-- /js files -->
 </head>
 <body>
@@ -39,10 +33,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <section class="banner">
 	<div id="slideshow-banner">
 		<ul>
-			<li class="slideshow-item"><img src="images/banner1.jpg" alt="" /></li>
-			<li class="slideshow-item"><img src="images/banner3.jpg" alt="" /></li>
-			<li class="slideshow-item"><img src="images/banner4.jpg" alt="" /></li>
-			<li class="slideshow-item"><img src="images/banner2.jpg" alt="" /></li>
+			<li class="slideshow-item"><img src="front/images/banner1.jpg" alt="" /></li>
+			<li class="slideshow-item"><img src="front/images/banner3.jpg" alt="" /></li>
+			<li class="slideshow-item"><img src="front/images/banner4.jpg" alt="" /></li>
+			<li class="slideshow-item"><img src="front/images/banner2.jpg" alt="" /></li>
 		</ul>
 	</div>
 </section>
@@ -56,7 +50,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="row">
 			<div class="col-md-6">
 				<div class="serv-img">
-					<img src="images/serv-img.png" alt="service" class="img-responsive">
+					<img src="front/images/serv-img.png" alt="service" class="img-responsive">
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -91,22 +85,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<img src="images/test1.png" alt="test1" class="img-responsive test">
+					<img src="front/images/test1.png" alt="test1" class="img-responsive test">
 					<h4 class="text-center">Johnny Blaze - Business Man</h4>
 					<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 				</div>
 				<div class="item">
-					<img src="images/test2.png" alt="test1" class="img-responsive test">
+					<img src="front/images/test2.png" alt="test1" class="img-responsive test">
 					<h4 class="text-center">Kate Winslet - Executive Manager</h4>
 					<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 				</div>
 				<div class="item">
-					<img src="images/test3.png" alt="test1" class="img-responsive test">
+					<img src="front/images/test3.png" alt="test1" class="img-responsive test">
 					<h4 class="text-center">Max Payne - CEO</h4>
 					<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 				</div>
 				<div class="item">
-					<img src="images/test4.png" alt="test1" class="img-responsive test">
+					<img src="front/images/test4.png" alt="test1" class="img-responsive test">
 					<h4 class="text-center">Britney Spears - Marketing Manager</h4>
 					<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 				</div>
@@ -351,24 +345,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <!-- /footer section -->
 <!-- js files -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/SmoothScroll.min.js"></script>
+<script src="front/js/jquery.min.js"></script>
+<script src="front/js/bootstrap.min.js"></script>
+<script src="front/js/SmoothScroll.min.js"></script>
 <!-- js for banner -->
-<script type="text/javascript" src="js/jquery.slide.js"></script>
+<script type="text/javascript" src="front/js/jquery.slide.js"></script>
 <script type="text/javascript">
 	$('#slideshow-banner').slide({
 		cdTime : 5000,      
-	    controllerLeftButton : "images/left.png",    
-	    controllerRightButton : "images/right.png"   
+	    controllerLeftButton : "front/images/left.png",    
+	    controllerRightButton : "front/images/right.png"   
 	});
 </script>
 <!-- /js for banner -->
 <!-- js for team section -->
-<script src="js/index.js"></script>
+<script src="front/js/index.js"></script>
 <!-- /js for team section -->
 <!-- js for pricing table pop up  -->
-<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+<script src="front/js/jquery.magnific-popup.js" type="text/javascript"></script>
 <script>
 	$(document).ready(function() {
 	$('.popup-with-zoom-anim').magnificPopup({
@@ -386,7 +380,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </script>
 <!-- /js for pricing table pop up  -->
 <!-- js for skill section -->
-<script src="js/progressbar.js"></script>
+<script src="front/js/progressbar.js"></script>
 <script>
     // Display the progress bar calling progressbar.js
 	$('.progressbarPhp').progressBar({
@@ -408,7 +402,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	});
 </script>
 <!-- /js for skill section -->
-<script src="js/main.js"></script>
+<script src="front/js/main.js"></script>
 <!-- /js files -->
 </body>
 </html>

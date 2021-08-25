@@ -1,39 +1,6 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
-<html>
-<head>
-<title>Tobio Properties | About Us </title>
-<!--mobile apps-->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="ofada, mowe, Houseing, Amen, Ajah, Lagos, ibeju-lekki, buy-sale, Rent, property, real-estate, Land" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- fonts -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" media="all" rel="stylesheet" type="text/css">
-<link href='//fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
-<!-- /fonts -->
-<!-- css files -->
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/progressbar.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="css/team.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
-<!-- /css files -->
-<!-- js files -->
-<script src="js/modernizr.custom.js"></script>
-<!-- /js files -->
-</head>
-<body class="extra-page">
-    
-<!-- navigation -->
-@include('frontend.partials.navbar')
-<!-- /navigation -->
+@extends('layouts.front')
+
+@section('content') 
 
 <!-- banner section -->
 <section class="banner">
@@ -42,10 +9,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<div id="slideshow-banner2">
 		<ul>
-			<li class="slideshow-item"><img src="images/banner1.jpg" alt="" /></li>
-			<li class="slideshow-item"><img src="images/banner3.jpg" alt="" /></li>
-			<li class="slideshow-item"><img src="images/banner4.jpg" alt="" /></li>
-			<li class="slideshow-item"><img src="images/banner2.jpg" alt="" /></li>
+			<li class="slideshow-item"><img src="{{ asset('front/images/banner1.jpg') }}" alt="" /></li>
+			<li class="slideshow-item"><img src="{{ asset('front/images/banner3.jpg') }}" alt="" /></li>
+			<li class="slideshow-item"><img src="{{ asset('front/images/banner4.jpg') }}" alt="" /></li>
+			<li class="slideshow-item"><img src="{{ asset('front/images/banner2.jpg') }}" alt="" /></li>
 		</ul>
 	</div>
 </section>
@@ -55,7 +22,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="row">
 			<div class="col-lg-12">
 				<ol class="breadcrumb">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="/">Home</a></li>
 					<li class="active">About Us</li>
 				</ol>
 			</div>
@@ -70,21 +37,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="col-md-6">
 				<div class="hover01 column">
 					<div>
-						<figure><img class="img-responsive" src="images/about.jpg" alt=""></figure>
+						<figure><img class="img-responsive" src="{{ asset('front/images/about.jpg') }}" alt=""></figure>
 					</div>
 				</div>
 			</div>	
 			<div class="col-md-6">
 				<h3>About Modern Business</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
+				<p>Welcome to Tobio Properties, your number one Realtor and Real Estate Consultant for all kind of Real Estate, with a focus on fast, trust and efficient service.</p>
+				<p>Founded in August 2018 by Mercy T. Okoro, Tobio Properties has come a long way to assist home and abroad to axis. When Mercy T. Okoro first started out, her passion for fast and trustworthy drove them to do tons of search so that Tobio Properties can offer you the world's most advanced real state search engine. We now serve customers all over the world, and are thrilled that we're able to turn our passion into our own website.</p>
+				<p>We hope you enjoy our service as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.</p>
 			</div>
 		</div>
 	</div>
 </section>	
 <!-- Our Customers -->
-<section class="customers">
+<!-- <section class="customers">
 	<h3 class="text-center">Our Customers</h3>
 	<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 	<div class="container">
@@ -183,7 +150,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
         <!-- /.row -->
 	</div>
-</section>	
+</section>	 -->
 <!-- testimonial section -->
 <section class="testimonials">
 	<h2 class="text-center">What Our Customers Say</h2>
@@ -200,22 +167,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<img src="images/test1.png" alt="test1" class="img-responsive">
+					<img src="{{ asset('front/images/test1.png') }}" alt="test1" class="img-responsive">
 					<h4 class="text-center">Johnny Blaze - Business Man</h4>
 					<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 				</div>
 				<div class="item">
-					<img src="images/test2.png" alt="test1" class="img-responsive">
+					<img src="{{ asset('front/images/test2.png') }}" alt="test1" class="img-responsive">
 					<h4 class="text-center">Kate Winslet - Executive Manager</h4>
 					<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 				</div>
 				<div class="item">
-					<img src="images/test3.png" alt="test1" class="img-responsive">
+					<img src="{{ asset('front/images/test3.png') }}" alt="test1" class="img-responsive">
 					<h4 class="text-center">Max Payne - CEO</h4>
 					<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 				</div>
 				<div class="item">
-					<img src="images/test4.png" alt="test1" class="img-responsive">
+					<img src="{{ asset('front/images/test4.png') }}" alt="test1" class="img-responsive">
 					<h4 class="text-center">Britney Spears - Marketing Manager</h4>
 					<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 				</div>
@@ -233,50 +200,4 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 </section>
 <!-- /testimonial section -->
-<!-- footer section -->
-
-@include('frontend.partials.footer')
-  
-  <!-- /footer section -->
-<a href="#0" class="cd-top">Top</a>
-<!-- js files -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/SmoothScroll.min.js"></script>
-<!-- js for banner -->
-<script type="text/javascript" src="js/jquery.slide.js"></script>
-<script type="text/javascript">
-	$('#slideshow-banner2').slide({
-		cdTime : 5000,      
-	    controllerLeftButton : "images/left.png",    
-	    controllerRightButton : "images/right.png"   
-	});
-</script>
-<!-- /js for banner -->
-<!-- js for skill section -->
-<script src="js/progressbar.js"></script>
-<script>
-    // Display the progress bar calling progressbar.js
-	$('.progressbarPhp').progressBar({
-		shadow : true,
-		percentage : false,
-		animation : true,
-		animateTarget : true,
-		barColor : "rgb(86, 79, 77)",
-	});
-	//Menu
-	$(".spinDown").click(function() {
-		var target = $(this).data("target");
-		var scrollFix = -80;
-		target = "#" + target;
-		$("html,body").animate({
-			scrollTop : $(target).offset().top + scrollFix
-		}, 1000);
-		return false;
-	});
-</script>
-<!-- /js for skill section -->
-<script src="js/main.js"></script>
-<!-- /js files -->
-</body>
-</html>
+@endsection

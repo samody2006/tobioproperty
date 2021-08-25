@@ -4,7 +4,7 @@
 <section id="main-content">
 	<section class="wrapper">
 		<div class="table-agile-info">
-    <button class="btn"><i class="fa fa-trash"></i></button>
+    <a href="/addHouseform"><i class="fa fa fa-plus fa-2x"></i>Add New Land</a>
  <div class="panel panel-default">
     <div class="panel-heading">
     List Of Lands

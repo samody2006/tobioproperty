@@ -40,35 +40,22 @@
                 </li>
                 <li class="sub-menu">
                     <a href="javascript:;">
-                        <i class=" fa fa-bar-chart-o"></i>
-                        <span>Charts</span>
+                        <i class=" fa fa-picture-o"></i>
+                        <span>Gallery</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="chartjs.html">Chart js</a></li>
-                        <li><a href="flot_chart.html">Flot Charts</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Pictures</a></li>
                     </ul>
                 </li>
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class=" fa fa-bar-chart-o"></i>
-                        <span>Maps</span>
+                
+                <li>
+                    <a href="#">
+                        <i class="fa fa-users"></i>
+                        <span>Users </span>
                     </a>
-                    <ul class="sub">
-                        <li><a href="google_map.html">Google Map</a></li>
-                        <li><a href="vector_map.html">Vector Map</a></li>
-                    </ul>
                 </li>
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-glass"></i>
-                        <span>Extra</span>
-                    </a>
-                    <ul class="sub">
-                        <li><a href="gallery.html">Gallery</a></li>
-						<li><a href="404.html">404 Error</a></li>
-                        <li><a href="registration.html">Registration</a></li>
-                    </ul>
-                </li>
+
                 <li>
                 <a href="{{ route('logout') }}">
                         <i class="fa fa-user"></i>

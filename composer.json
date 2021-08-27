@@ -5,7 +5,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": "^8.0",
+        "php": "^7.3|^8.0",
         "brian2694/laravel-toastr": "^5.56",
         "fideloper/proxy": "^4.4",
         "intervention/image": "^2.6",

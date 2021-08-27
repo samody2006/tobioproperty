@@ -19,6 +19,7 @@
                                 <option value="" disabled selected>Choose Type</option>
                                 <option value="apartment">Apartment</option>
                                 <option value="house">House</option>
+                                <option value="land">Land</option>
                             </select>
                         </div>
 

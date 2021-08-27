@@ -1,238 +1,246 @@
+@extends('backend.layouts.app')
 
-<!DOCTYPE html>
-<head>
-<title>Tobio Properties | Admin </title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="ofada, mowe, Houseing, Amen, Ajah, Lagos, ibeju-lekki, buy-sale, Rent, property, real-estate, Land" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- bootstrap-css -->
-<link href="{{ asset('back/css/bootstrap.min.css') }}" rel="stylesheet">
-<!-- //bootstrap-css -->
-<!-- Custom CSS -->
-<link href="{{ asset('back/css/style.css') }}" rel='stylesheet' type='text/css' />
-<link href="{{ asset('back/css/style-responsive.css') }}" rel="stylesheet"/>
-<!-- font CSS -->
-<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-<!-- font-awesome icons -->
-<link rel="stylesheet" href="{{ asset('back/css/font.css') }}" type="text/css"/>
-<link href="{{ asset('back/css/font-awesome.css') }}" rel="stylesheet"> 
-<link rel="stylesheet" href="{{ asset('back/css/morris.css') }}" type="text/css"/>
-<!-- calendar -->
-<link rel="stylesheet" href="{{ asset('back/css/monthly.css') }}">
-<!-- //calendar -->
-<!-- //font-awesome icons -->
-<script src="{{ asset('back/js/jquery2.0.3.min.js') }}"></script>
-<script src="{{ asset('back/js/raphael-min.js') }}"></script>
-<script src="{{ asset('back/js/morris.js') }}"></script>
-</head>
-<body>
-<section id="container">
-<!--header start-->
-@include('layouts.navbar.topnav')
-<!--header end-->
-<!--sidebar start-->
-@include('layouts.navbar.sidebar')
-<!--sidebar end-->
-<!--main content start-->
-<section id="main-content">
-	<section class="wrapper">
-		<!-- //market-->
-		<div class="market-updates">
-			<div class="col-md-3 market-update-gd">
-				<div class="market-update-block clr-block-2">
-					<div class="col-md-4 market-update-right">
-						<i class="fa fa-home fa-4x" aria-hidden="true"> </i>
-					</div>
-					 <div class="col-md-8 market-update-left">
-					 <h4>Houses</h4>
-					<h3>13,500</h3>
-					<p>Other hand, we denounce</p>
-				  </div>
-				  <div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="col-md-3 market-update-gd">
-				<div class="market-update-block clr-block-1">
-					<div class="col-md-4 market-update-right">
-						<i class="fa fa-users" ></i>
-					</div>
-					<div class="col-md-8 market-update-left">
-					<h4>Users</h4>
-						<h3>{{ $users->count() }}</h3>
-						<p>Other hand, we denounce</p>
-					</div>
-				  <div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="col-md-3 market-update-gd">
-				<div class="market-update-block clr-block-3">
-					<div class="col-md-4 market-update-right">
-						<i class="fa fa-usd"></i>
-					</div>
-					<div class="col-md-8 market-update-left">
-						<h4>Lands</h4>
-						<h3>1,500</h3>
-						<p>Other hand, we denounce</p>
-					</div>
-				  <div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="col-md-3 market-update-gd">
-				<div class="market-update-block clr-block-4">
-					<div class="col-md-4 market-update-right">
-						<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-					</div>
-					<div class="col-md-8 market-update-left">
-						<h4>Orders</h4>
-						<h3>1,500</h3>
-						<p>Other hand, we denounce</p>
-					</div>
-				  <div class="clearfix"> </div>
-				</div>
-			</div>
-		   <div class="clearfix"> </div>
-		</div>	
-		<!-- //market-->
-		<div class="row">
-			<div class="panel-body">
-				<div class="col-md-12 w3ls-graph">
-					<!--agileinfo-grap-->
-						<div class="agileinfo-grap">
-							<div class="agileits-box">
-								<header class="agileits-box-header clearfix">
-									<h3>Visitor Statistics</h3>
-										<div class="toolbar">
-											
-											
-										</div>
-								</header>
-								<div class="agileits-box-body clearfix">
-									<div id="hero-area"></div>
-								</div>
-							</div>
-						</div>
-	<!--//agileinfo-grap-->
+@section('title', 'Dashboard')
 
-				</div>
-			</div>
-		</div>
-		<div class="agil-info-calendar">
-		<!-- calendar -->
-		
-</section>
- <!-- footer -->
-		  <div class="footer">
-			<div class="wthree-copyright">
-            <p>© 
-                <?php
-                $copyYear = 2008; // Set your website start date
-                $curYear = date('Y'); // Keeps the second year updated
-                echo $copyYear . (($copyYear != $curYear) ? '-' . $curYear : '');
-                ?> Copyright</strong> Tobio Properties. All Rights Reserved | Design by
-                <a href="http://w3layouts.com">W3layouts</a>
-            </p>
+@push('styles')
+
+@endpush
+
+
+@section('content')
+
+    <div class="block-header">
+        <h2>DASHBOARD</h2>
+    </div>
+
+    <!-- Widgets -->
+    <div class="row clearfix">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-pink hover-expand-effect">
+                <div class="icon">
+                    <i class="material-icons">playlist_add_check</i>
+                </div>
+                <div class="content">
+                    <div class="text">TOTAL PROPERTY</div>
+                    <div class="number count-to" data-from="0" data-to="{{ $propertycount }}" data-speed="15" data-fresh-interval="20"></div>
+                </div>
+            </div>
         </div>
-		  </div>
-  <!-- / footer -->
-</section>
-<!--main content end-->
-</section>
-<script src="{{ asset('back/js/bootstrap.js') }}"></script>
-<script src="{{ asset('back/js/jquery.dcjqaccordion.2.7.js') }}"></script>
-<script src="{{ asset('back/js/scripts.js') }}"></script>
-<script src="{{ asset('back/js/jquery.slimscroll.js') }}"></script>
-<script src="{{ asset('back/js/jquery.nicescroll.js') }}"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-<script src="{{ asset('back/js/jquery.scrollTo.js') }}"></script>
-<!-- morris JavaScript -->	
-<script>
-	$(document).ready(function() {
-		//BOX BUTTON SHOW AND CLOSE
-	   jQuery('.small-graph-box').hover(function() {
-		  jQuery(this).find('.box-button').fadeIn('fast');
-	   }, function() {
-		  jQuery(this).find('.box-button').fadeOut('fast');
-	   });
-	   jQuery('.small-graph-box .box-close').click(function() {
-		  jQuery(this).closest('.small-graph-box').fadeOut(200);
-		  return false;
-	   });
-	   
-	    //CHARTS
-	    function gd(year, day, month) {
-			return new Date(year, month - 1, day).getTime();
-		}
-		
-		graphArea2 = Morris.Area({
-			element: 'hero-area',
-			padding: 10,
-        behaveLikeLine: true,
-        gridEnabled: false,
-        gridLineColor: '#dddddd',
-        axes: true,
-        resize: true,
-        smooth:true,
-        pointSize: 0,
-        lineWidth: 0,
-        fillOpacity:0.85,
-			data: [
-				{period: '2015 Q1', iphone: 2668, ipad: null, itouch: 2649},
-				{period: '2015 Q2', iphone: 15780, ipad: 13799, itouch: 12051},
-				{period: '2015 Q3', iphone: 12920, ipad: 10975, itouch: 9910},
-				{period: '2015 Q4', iphone: 8770, ipad: 6600, itouch: 6695},
-				{period: '2016 Q1', iphone: 10820, ipad: 10924, itouch: 12300},
-				{period: '2016 Q2', iphone: 9680, ipad: 9010, itouch: 7891},
-				{period: '2016 Q3', iphone: 4830, ipad: 3805, itouch: 1598},
-				{period: '2016 Q4', iphone: 15083, ipad: 8977, itouch: 5185},
-				{period: '2017 Q1', iphone: 10697, ipad: 4470, itouch: 2038},
-			
-			],
-			lineColors:['#eb6f6f','#926383','#eb6f6f'],
-			xkey: 'period',
-            redraw: true,
-            ykeys: ['iphone', 'ipad', 'itouch'],
-            labels: ['All Visitors', 'Returning Visitors', 'Unique Visitors'],
-			pointSize: 2,
-			hideHover: 'auto',
-			resize: true
-		});
-		
-	   
-	});
-	</script>
-<!-- calendar -->
-	<script type="text/javascript" src="{{ asset('back/js/monthly.js') }}"></script>
-	<script type="text/javascript">
-		$(window).load( function() {
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-cyan hover-expand-effect">
+                <div class="icon">
+                    <i class="material-icons">help</i>
+                </div>
+                <div class="content">
+                    <div class="text">TOTAL POST</div>
+                    <div class="number count-to" data-from="0" data-to="{{ $postcount }}" data-speed="1000" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-light-green hover-expand-effect">
+                <div class="icon">
+                    <i class="material-icons">forum</i>
+                </div>
+                <div class="content">
+                    <div class="text">TOTAL COMMENT</div>
+                    <div class="number count-to" data-from="0" data-to="{{ $commentcount }}" data-speed="1000" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-orange hover-expand-effect">
+                <div class="icon">
+                    <i class="material-icons">person_add</i>
+                </div>
+                <div class="content">
+                    <div class="text">TOTAL USER</div>
+                    <div class="number count-to" data-from="0" data-to="{{ $usercount }}" data-speed="1000" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #END# Widgets -->
 
-			$('#mycalendar').monthly({
-				mode: 'event',
-				
-			});
+    <div class="row clearfix">
+        <!-- RECENT PROPERTIES -->
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="card">
+                <div class="header">
+                    <h2>RECENT PROPERTIES</h2>
+                </div>
+                <div class="body">
+                    <div class="table-responsive">
+                        <table class="table table-hover dashboard-task-infos">
+                            <thead>
+                                <tr>
+                                    <th>SL.</th>
+                                    <th>Title</th>
+                                    <th>Price</th>
+                                    <th>City</th>
+                                    <th><i class="material-icons small">star</i></th>
+                                    <th>Manager</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($properties as $key => $property)
+                                <tr>
+                                    <td>{{ ++$key }}.</td>
+                                    <td>
+                                        <span title="{{ $property->title }}">
+                                            {{ str_limit($property->title, 10) }}
+                                        </span>
+                                    </td>
+                                    <td>&#8358;{{ $property->price }}.00M</td>
+                                    <td>{{ $property->city }}</td>
+                                    <td>
+                                        @if($property->featured == 1)
+                                            <span class="label bg-green">F</span>
+                                        @endif
+                                    </td>
+                                    <td>{{ strtok($property->user->name, " ")}}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #END# RECENT PROPERTIES -->
 
-			$('#mycalendar2').monthly({
-				mode: 'picker',
-				target: '#mytarget',
-				setWidth: '250px',
-				startHidden: true,
-				showTrigger: '#mytarget',
-				stylePast: true,
-				disablePast: true
-			});
+        <!-- RECENT POSTS -->
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="card">
+                <div class="header">
+                    <h2>RECENT POSTS</h2>
+                </div>
+                <div class="body">
+                    <div class="table-responsive">
+                        <table class="table table-hover dashboard-task-infos">
+                            <thead>
+                                <tr>
+                                    <th>SL.</th>
+                                    <th>Title</th>
+                                    <th><i class="material-icons small">comment</i></th>
+                                    <th>Author</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($posts as $key => $post)
+                                <tr>
+                                    <td>{{ ++$key }}.</td>
+                                    <td>
+                                        <span title="{{ $post->title }}">
+                                            {{ str_limit($post->title, 30) }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="label bg-green">{{ $post->comments_count }}</span>
+                                    </td>
+                                    <td>{{ strtok($post->user->name, " ")}}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #END# RECENT POSTS -->
+    </div>
 
-		switch(window.location.protocol) {
-		case 'http:':
-		case 'https:':
-		// running on a server, should be good.
-		break;
-		case 'file:':
-		alert('Just a heads-up, events will not work when run locally.');
-		}
+    <div class="row clearfix">
+        <!-- USER LIST -->
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="card">
+                <div class="header">
+                    <h2>USER LIST</h2>
+                </div>
+                <div class="body">
+                    <div class="table-responsive">
+                        <table class="table table-hover dashboard-task-infos">
+                            <thead>
+                                <tr>
+                                    <th>SL.</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($users as $key => $user)
+                                <tr>
+                                    <td>{{ ++$key }}.</td>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>{{ $user->role->name }}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #END# USER LIST -->
 
-		});
-	</script>
-	<!-- //calendar -->
+        <!-- RECENT COMMENTS -->
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="card">
+                <div class="header">
+                    <h2>RECENT COMMENTS</h2>
+                </div>
+                <div class="body">
+                    <div class="table-responsive">
+                        <table class="table table-hover dashboard-task-infos">
+                            <thead>
+                                <tr>
+                                    <th>SL.</th>
+                                    <th>Comment</th>
+                                    <th><i class="material-icons small">check</i></th>
+                                    <th>Author</th>
+                                    <th>Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($comments as $key => $comment)
+                                <tr>
+                                    <td>{{ ++$key }}.</td>
+                                    <td>
+                                        <span title="{{ $comment->body }}">
+                                            {{ str_limit($comment->body, 10) }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        @if($comment->approved == 1)
+                                            <span class="label bg-green">A</span>
+                                        @else
+                                            <span class="label bg-red">N</span>
+                                        @endif
+                                    </td>
+                                    <td>{{ strtok($comment->users->name, " ")}}</td>
+                                    <td>{{ $comment->created_at->diffForHumans() }}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #END# RECENT COMMENTS -->
+    </div>
 
-</body>
-</html>
+
+@endsection
+
+@push('scripts')
+
+    <!-- Jquery CountTo Plugin Js -->
+    <script src="{{ asset('backend/plugins/jquery-countto/jquery.countTo.js') }}"></script>
+
+    <!-- Sparkline Chart Plugin Js -->
+    <script src="{{ asset('backend/js/pages/index.js') }}"></script>
+
+@endpush

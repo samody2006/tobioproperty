@@ -1,61 +1,110 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\DashboardController;
+// FRONT-END ROUTES
+Route::get('/', 'FrontpageController@index')->name('home');
+Route::get('/about', 'PagesController@about')->name('about');
+Route::get('/slider', 'FrontpageController@slider')->name('slider.index');
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::get('/search', 'FrontpageController@search')->name('search');
 
-Route::get('/', function () {
-    return view('frontend.home');
-});
+Route::get('/property', 'PagesController@properties')->name('property');
+Route::get('/property/{id}', 'PagesController@propertieshow')->name('property.show');
+Route::post('/property/message', 'PagesController@messageAgent')->name('property.message');
+Route::post('/property/comment/{id}', 'PagesController@propertyComments')->name('property.comment');
+Route::post('/property/rating', 'PagesController@propertyRating')->name('property.rating');
+Route::get('/property/city/{cityslug}', 'PagesController@propertyCities')->name('property.city');
+
+// Route::get('/agents', 'PagesController@agents')->name('agents');
+Route::get('/agents/{id}', 'PagesController@agentshow')->name('agents.show');
+
+Route::get('/gallery', 'PagesController@gallery')->name('gallery');
+
+Route::get('/blog', 'PagesController@blog')->name('blog');
+Route::get('/blog/{id}', 'PagesController@blogshow')->name('blog.show');
+Route::post('/blog/comment/{id}', 'PagesController@blogComments')->name('blog.comment');
+
+Route::get('/blog/categories/{slug}', 'PagesController@blogCategories')->name('blog.categories');
+Route::get('/blog/tags/{slug}', 'PagesController@blogTags')->name('blog.tags');
+Route::get('/blog/author/{username}', 'PagesController@blogAuthor')->name('blog.author');
+
+Route::get('/contact', 'PagesController@contact')->name('contact');
+Route::post('/contact', 'PagesController@messageContact')->name('contact.message');
+
 
 Auth::routes();
-Route::get('/register', function() {return redirect('/login');});
-Route::post('/register', function() { return redirect('/login');});
-Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
+Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin'],'as'=>'admin.'], function(){
 
+    Route::get('dashboard','DashboardController@index')->name('dashboard');
+    Route::resource('tags','TagController');
+    Route::resource('categories','CategoryController');
+    Route::resource('posts','PostController');
+    Route::resource('features','FeatureController');
+    Route::resource('properties','PropertyController');
+    Route::post('properties/gallery/delete','PropertyController@galleryImageDelete')->name('gallery-delete');
 
-//Frontend
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
-Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
-Route::get('/blog', [App\Http\Controllers\HomeController::class, 'blog'])->name('blog');
-Route::get('/property', [App\Http\Controllers\HomeController::class, 'properties'])->name('property');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::resource('sliders','SliderController');
+    Route::resource('services','ServiceController');
+    Route::resource('testimonials','TestimonialController');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+    Route::get('galleries/album','GalleryController@album')->name('album');
+    Route::post('galleries/album/store','GalleryController@albumStore')->name('album.store');
+    Route::get('galleries/{id}/gallery','GalleryController@albumGallery')->name('album.gallery');
+    Route::post('galleries','GalleryController@Gallerystore')->name('galleries.store');
+    Route::delete('galleries/delete/{id}','GalleryController@destroy')->name('galleries.destroy');
+
+    Route::get('settings', 'DashboardController@settings')->name('settings');
+    Route::post('settings', 'DashboardController@settingStore')->name('settings.store');
+
+    Route::get('profile','DashboardController@profile')->name('profile');
+    Route::post('profile','DashboardController@profileUpdate')->name('profile.update');
+
+    Route::get('message','DashboardController@message')->name('message');
+    Route::get('message/read/{id}','DashboardController@messageRead')->name('message.read');
+    Route::get('message/replay/{id}','DashboardController@messageReplay')->name('message.replay');
+    Route::post('message/replay','DashboardController@messageSend')->name('message.send');
+    Route::post('message/readunread','DashboardController@messageReadUnread')->name('message.readunread');
+    Route::delete('message/delete/{id}','DashboardController@messageDelete')->name('messages.destroy');
+    Route::post('message/mail', 'DashboardController@contactMail')->name('message.mail');
+
+    Route::get('changepassword','DashboardController@changePassword')->name('changepassword');
+    Route::post('changepassword','DashboardController@changePasswordUpdate')->name('changepassword.update');
+
 });
 
-//Backend
-//Blog
-Route::get('dashboard/blog', [App\Http\Controllers\HomeController::class, 'showblog'])->name('showblog');
-// Route::get('/blog/{article}/view','ArticleController@showBlogPost');
-// Route::get('/blog/new','ArticleController@newBlogPost')->middleware('auth:admin');
-// Route::post('/blog/new','ArticleController@addBlogPost')->middleware('auth:admin');
-// Route::get('/blog/{article}/edit','ArticleController@showEditBlogPost')->middleware('auth:admin');
-// Route::post('/blog/{article}/edit','ArticleController@editBlogPost')->middleware('auth:admin');
-// Route::post('/blog/comment','CommentController@addComment');
-// Route::get('/blog/comment/{comment}/delete','CommentController@deleteComment')->middleware('auth:admin');
+// Route::group(['prefix'=>'agent','namespace'=>'Agent','middleware'=>['auth','agent'],'as'=>'agent.'], function(){
 
-//House
-Route::get('dashboard/house', [App\Http\Controllers\Admin\ProductController::class, 'showhouse'])->name('showhouse');
-Route::get('/add/house', [App\Http\Controllers\Admin\ProductController::class, 'addhouse'])->name('addhouse');
-Route::post('/add/house', [App\Http\Controllers\Admin\ProductController::class, 'addhouse'])->name('addhouse');
-Route::get('/addHouseform', [App\Http\Controllers\Admin\ProductController::class, 'addHouseform'])->name('addHouseform');
+//     Route::get('dashboard','DashboardController@index')->name('dashboard');
+//     Route::get('profile','DashboardController@profile')->name('profile');
+//     Route::post('profile','DashboardController@profileUpdate')->name('profile.update');
+//     Route::get('changepassword','DashboardController@changePassword')->name('changepassword');
+//     Route::post('changepassword','DashboardController@changePasswordUpdate')->name('changepassword.update');
+//     Route::resource('properties','PropertyController');
+//     Route::post('properties/gallery/delete','PropertyController@galleryImageDelete')->name('gallery-delete');
 
+//     Route::get('message','DashboardController@message')->name('message');
+//     Route::get('message/read/{id}','DashboardController@messageRead')->name('message.read');
+//     Route::get('message/replay/{id}','DashboardController@messageReplay')->name('message.replay');
+//     Route::post('message/replay','DashboardController@messageSend')->name('message.send');
+//     Route::post('message/readunread','DashboardController@messageReadUnread')->name('message.readunread');
+//     Route::delete('message/delete/{id}','DashboardController@messageDelete')->name('messages.destroy');
+//     Route::post('message/mail', 'DashboardController@contactMail')->name('message.mail');
 
-//Land 
-Route::get('dashboard/land', [App\Http\Controllers\Admin\ProductController::class, 'showland'])->name('showland');
+// });
+
+Route::group(['prefix'=>'user','namespace'=>'User','middleware'=>['auth','user'],'as'=>'user.'], function(){
+
+    Route::get('dashboard','DashboardController@index')->name('dashboard');
+    Route::get('profile','DashboardController@profile')->name('profile');
+    Route::post('profile','DashboardController@profileUpdate')->name('profile.update');
+    Route::get('changepassword','DashboardController@changePassword')->name('changepassword');
+    Route::post('changepassword','DashboardController@changePasswordUpdate')->name('changepassword.update');
+
+    Route::get('message','DashboardController@message')->name('message');
+    Route::get('message/read/{id}','DashboardController@messageRead')->name('message.read');
+    Route::get('message/replay/{id}','DashboardController@messageReplay')->name('message.replay');
+    Route::post('message/replay','DashboardController@messageSend')->name('message.send');
+    Route::post('message/readunread','DashboardController@messageReadUnread')->name('message.readunread');
+    Route::delete('message/delete/{id}','DashboardController@messageDelete')->name('messages.destroy');
+
+});

@@ -455,7 +455,7 @@ h2.sidebar-title {
 .sidebar-search .btnsearch{
     width: 100%;
     box-shadow: none;
-    background-color: rgb(30, 47, 126) !important;
+    background-color: rgb(212,136,85) !important;
     color: #ffffff;
 }
 .sidebar-search .btnsearch span{
@@ -467,7 +467,7 @@ h2.sidebar-title {
 .featured-stars i{
     font-size: 1rem;
     padding-top: 5px;
-    color: rgb(30, 47, 126);
+    color: #ffffff;
 }
 
 

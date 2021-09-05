@@ -33,7 +33,7 @@
                     <ul class="list-group">
                         <li class="list-group-item">
                             <strong>Price : </strong>
-                            <span class="right"> &dollar;{{$property->price}}</span>
+                            <span class="right"> &#8358;{{$property->price}}M</span>
                         </li>
                         <li class="list-group-item">
                             <strong>Bedroom : </strong>

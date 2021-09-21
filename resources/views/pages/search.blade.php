@@ -122,7 +122,7 @@
                                     </div>
 
                                     <h5>
-                                        &#8358;{{ $property->price }}M
+                                        &#8358;{{ $property->price }}
                                         <small class="right">{{ $property->type }} for {{ $property->purpose }}</small>
                                     </h5>
 

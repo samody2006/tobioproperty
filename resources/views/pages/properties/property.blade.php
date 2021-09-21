@@ -66,7 +66,7 @@
                                 </div>
 
                                 <h5>
-                                    &#8358;{{ $property->price }}<strong>M</strong>
+                                    &#8358;{{ $property->price }}
                                     <div class="right" id="propertyrating-{{$property->id}}"></div>
                                 </h5>                                
                             </div>

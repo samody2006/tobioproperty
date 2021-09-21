@@ -91,7 +91,7 @@
                                             {{ str_limit($property->title, 10) }}
                                         </span>
                                     </td>
-                                    <td>&#8358;{{ $property->price }}.00M</td>
+                                    <td>&#8358;{{ $property->price }}</td>
                                     <td>{{ $property->city }}</td>
                                     <td>
                                         @if($property->featured == 1)

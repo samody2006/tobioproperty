@@ -76,7 +76,7 @@
                 </div>
                 <div class="col s12 m4">
                     <div>
-                        <h4 class="left">&#8358;{{ $property->price }}.<strong>M</strong></h4>
+                        <h4 class="left">&#8358;{{ $property->price }}</h4>
                         <button type="button" class="btn btn-small m-t-25 right disabled b-r-20"> For {{ $property->purpose }}</button>
                     </div>
                 </div>
@@ -323,7 +323,7 @@
                                                 <div class="card-stacked">
                                                     <div class="p-l-10 p-r-10 indigo-text">
                                                         <h6 title="{{$property_related->title}}">{{ str_limit( $property_related->title, 18 ) }}</h6>
-                                                        <strong>&#8358;{{$property_related->price}}>.M</strong>
+                                                        <strong>&#8358;{{$property_related->price}}></strong>
                                                     </div>
                                                 </div>
                                             </div>

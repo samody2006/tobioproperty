@@ -68,21 +68,7 @@
             </p>
             @endif
 
-            @if(isset($footersettings[0]) && $footersettings[0]['facebook'])
-                <a class="grey-text text-lighten-4 right" href="{{ $footersettings[0]['facebook'] }}" target="_blank">FACEBOOK</a>
-                @else
-                <a class="grey-text text-lighten-4 right" href="#" target="_blank"><i class="fa fa-facebook"></a>
-            @endif
-            @if(isset($footersettings[0]) && $footersettings[0]['twitter'])
-                <a class="grey-text text-lighten-4 right m-r-10" href="{{ $footersettings[0]['twitter'] }}" target="_blank">TWITTER</a>
-            @else
-            <a class="grey-text text-lighten-4 right m-r-10" href="#"target="_blank">TWITTER</a>
-                @endif
-            @if(isset($footersettings[0]) && $footersettings[0]['linkedin'])
-                <a class="grey-text text-lighten-4 right m-r-10" href="{{ $footersettings[0]['linkedin'] }}" target="_blank">LINKEDIN</a>
-                @else
-            <a class="grey-text text-lighten-4 right m-r-10" href="#" target="_blank">TWITTER</a>
-            @endif
+
 
         </div>
     </div>

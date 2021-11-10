@@ -79,8 +79,13 @@
                         <div class="m-t-30">
                             <i class="material-icons left">call</i>
                             <h6 class="uppercase">Call us Now</h6>
-                            <h6 class="bold m-l-40">08038553455</h6>
+                            <h6 class="bold m-l-40">+2348038553455</h6>
                         </div>
+                        <div class="m-t-30">
+                            <i class="material-icons left">whatsapp</i>
+                            <h6 class="uppercase">WhatsApp us Now</h6>
+                            <h6 class="bold m-l-40"><a href="https://wa.link/l09e7p"><i class="material-icons ">whatsapp</i></a></h6>
+                        </div>                        
                         <div class="m-t-30">
                             <i class="material-icons left">mail</i>
                             <h6 class="uppercase">Email Address</h6>

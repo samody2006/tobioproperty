@@ -79,16 +79,12 @@
                         <div class="m-t-30">
                             <i class="material-icons left">call</i>
                             <h6 class="uppercase">Call us Now</h6>
-                            @if(isset($contactsettings[0]) && $contactsettings[0]['phone'])
-                                <h6 class="bold m-l-40">{{ $contactsettings[0]['phone'] }}</h6>
-                            @endif
+                            <h6 class="bold m-l-40">08038553455</h6>
                         </div>
                         <div class="m-t-30">
                             <i class="material-icons left">mail</i>
                             <h6 class="uppercase">Email Address</h6>
-                            @if(isset($contactsettings[0]) && $contactsettings[0]['email'])
-                                <h6 class="bold m-l-40">{{ $contactsettings[0]['email'] }}</h6>
-                            @endif
+                            <h6 class="bold m-l-40">tobioproperties@gmail.com</h6>
                         </div>
                         <div class="m-t-30">
                             <i class="material-icons left">map</i>

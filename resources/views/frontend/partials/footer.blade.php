@@ -1,4 +1,3 @@
-
 <footer class="page-footer indigo darken-2">
     <div class="container">
         <div class="row">

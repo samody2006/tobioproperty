@@ -121,8 +121,8 @@
                                         <span>{{ ucfirst($property->address) }}</span>
                                     </div>
 
-                                    <h5>
-                                        &#8358;{{ $property->price }}
+                                    <h5> 
+                                        &#8358;{{  number_format($property->price) }}
                                         <small class="right">{{ $property->type }} for {{ $property->purpose }}</small>
                                     </h5>
 

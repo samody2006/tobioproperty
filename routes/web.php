@@ -4,9 +4,7 @@
 Route::get('/', 'FrontpageController@index')->name('home');
 Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/slider', 'FrontpageController@slider')->name('slider.index');
-
 Route::get('/search', 'FrontpageController@search')->name('search');
-
 Route::get('/property', 'PagesController@properties')->name('property');
 Route::get('/property/{id}', 'PagesController@propertieshow')->name('property.show');
 Route::post('/property/message', 'PagesController@messageAgent')->name('property.message');
@@ -16,17 +14,13 @@ Route::get('/property/city/{cityslug}', 'PagesController@propertyCities')->name(
 
 // Route::get('/agents', 'PagesController@agents')->name('agents');
 Route::get('/agents/{id}', 'PagesController@agentshow')->name('agents.show');
-
 Route::get('/gallery', 'PagesController@gallery')->name('gallery');
-
 Route::get('/blog', 'PagesController@blog')->name('blog');
 Route::get('/blog/{id}', 'PagesController@blogshow')->name('blog.show');
 Route::post('/blog/comment/{id}', 'PagesController@blogComments')->name('blog.comment');
-
 Route::get('/blog/categories/{slug}', 'PagesController@blogCategories')->name('blog.categories');
 Route::get('/blog/tags/{slug}', 'PagesController@blogTags')->name('blog.tags');
 Route::get('/blog/author/{username}', 'PagesController@blogAuthor')->name('blog.author');
-
 Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::post('/contact', 'PagesController@messageContact')->name('contact.message');
 
